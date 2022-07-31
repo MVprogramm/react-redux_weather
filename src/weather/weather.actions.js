@@ -1,4 +1,4 @@
-import getWeatherData from "./weather.gateWay.js";
+import fetchWeatherData from "./weather.gateWay.js";
 
 export const RECIVE = "WEATHER/RECIVE_WEATHER_DATA";
 
@@ -11,9 +11,9 @@ export const reciveWeatherData = (weatherData) => {
   }
 }
 
-export const fetchWeatherData = () => {
+export const getWeatherData = () => {
   return function(dispatch) {
-    getWeatherData()
+    fetchWeatherData()
       .then((weatherData) => {
         dispatch(reciveWeatherData(weatherData));
       });

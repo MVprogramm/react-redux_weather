@@ -6,9 +6,9 @@ import * as weatherActions from "./weather.actions.js";
 import { weatherDataSelector } from "./weather.selectors.js"
 import "./weather.scss";
 
-const Weather = ({ weatherData, fetchWeatherData }) => {
+const Weather = ({ weatherData, getWeatherData }) => {
   if (!weatherData) {
-    fetchWeatherData();
+    getWeatherData();
     return null;
   }
   return (
@@ -32,7 +32,12 @@ const Weather = ({ weatherData, fetchWeatherData }) => {
 }
 
 Weather.propTypes = {
-  fetchWeatherData: PropTypes.func.isRequired,
+  getWeatherData: PropTypes.func.isRequired,
+  weatherData: PropTypes.array
+}
+
+Weather.defaultValue = {
+  weatherData: null
 }
 
 const mapState = (state) => {
@@ -42,7 +47,7 @@ const mapState = (state) => {
 }
 
 const mapDispatch = {
-  fetchWeatherData: weatherActions.fetchWeatherData
+  getWeatherData: weatherActions.getWeatherData
 }
 
 export default connect(mapState, mapDispatch)(Weather);
