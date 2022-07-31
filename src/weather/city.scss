@@ -1,0 +1,8 @@
+.city {
+  display: flex;
+  line-height: 32px;
+
+  &__temperature {
+      margin-left: auto;
+  }
+}

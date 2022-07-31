@@ -1,0 +1,15 @@
+.weather {
+  width: 100%;
+  max-width: 300px;
+
+  &__title {
+      word-spacing: 16px;
+      font-weight: 300;
+  }
+}
+
+.cities-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
